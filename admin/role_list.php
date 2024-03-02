@@ -7,27 +7,23 @@
     <!-- Include header.php -->
     <?php include 'common/header.php'; ?>
   </head>
-  <body>
-    
+  <body> 
     <div class="content-header">
       <div class="container-fluid">
         <div class="row justify-content-between mb-2">
           <!-- Role Title -->
           <div class="col-md-6">
-            <h1 class="m-0">Role Master</h1>
-          </div>
+              <h1 class="m-0">Role Master</h1>
+           </div>
           <!-- Role Add Button and Form -->
-          <div class="col-md-6 text-right">
-    <a href="new_role_add.php" target="_blank">
-        <button class="btn btn-primary" style="float: right; background-color: orange; color: black; border: none">
-            <i class="fa fa-user"></i> Role add
-        </button>
-    </a>
+             <div class="col-md-6 text-right">
+                    <a href="role_add.php" target="_blank">
+                     <button class="btn btn-primary" style="float: right; background-color: light-blue; color: white; border: none">
+                    <i class="fa fa-user"></i> Role add
+                   </button>
+                  </a>
     <!-- Rest of your code -->
-</div>
-
-         
- 
+                  </div>
                 </form>
               </div>
             </div>
