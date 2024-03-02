@@ -8,13 +8,13 @@
     <?php include 'common/header.php'; ?>
   </head>
   <body>
-    <!-- Content Header -->
+    
     <div class="content-header">
       <div class="container-fluid">
         <div class="row justify-content-between mb-2">
           <!-- Role Title -->
           <div class="col-md-6">
-            <h1 class="m-0">Role</h1>
+            <h1 class="m-0">Role Master</h1>
           </div>
           <!-- Role Add Button and Form -->
           <div class="col-md-6 text-right">
