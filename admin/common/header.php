@@ -114,8 +114,7 @@ $PAGE_NAME = $PAGE_NAME_ARRY[0];
               <li class="nav-item">
                 <a href="role_list.php" class="nav-link <?php echo $PAGE_NAME=='role_list' ? 'active' : '' ?>">
                   <i class="far fa-circle nav-icon"></i>
-                  <p>Role Master</p>
-                  
+                  <p>Role Master</p>    
                 </a>
               </li>
               <li class="nav-item">
