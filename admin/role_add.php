@@ -19,15 +19,10 @@ include 'common/header.php';
 <section class="content">
     <div class="container-fluid ">
         <div class="row">
-            <div class="border border-3 p-3 w-100 shadow p-3 mb-5 bg-body rounded  " style="height:57vh;">
+            <div class="border border-3 p-3 w-100 shadow p-3 mb-5 bg-body rounded  " style="height:57vh;border-top: 8px solid blue">
                 <form action="role_list.php" method="post">
                     <div class="row">
-                        <div class="col-md-3">
-                            <div class="form-group">
-                                <label for="roleID1">Role ID</label>
-                                <input type="text" class="form-control" id="roleID1" name="roleID1">
-                            </div>
-                        </div>
+                       
                         <div class="col-md-3">
                             <div class="form-group">
                                 <label for="roleName1">Role Name</label>
@@ -57,7 +52,7 @@ include 'common/header.php';
                          
                         </div>
                         <div>
-                        <button type="submit" class="btn btn-primary" style="margin-left:770px; background-color: grey; 
+                        <button type="submit" class="btn btn-primary" style="margin-right:3px; background-color: grey; 
                             border: none; color: white; padding: 12px 16px 12px 16px; text-align: left; font-size: 16px; position: relative; top: 160px;">cancel</button>
                          
                         </div>
