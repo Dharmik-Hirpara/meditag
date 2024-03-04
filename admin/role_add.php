@@ -52,9 +52,8 @@ include 'common/header.php';
                          
                         </div>
                         <div>
-                        <button type="submit" class="btn btn-primary" style="margin-right:3px; background-color: grey; 
-                            border: none; color: white; padding: 12px 16px 12px 16px; text-align: left; font-size: 16px; position: relative; top: 160px;">cancel</button>
-                         
+                        <button type="submit" class="btn btn-primary" style="margin-right:2px; background-color: grey; 
+                            border: none; color: white; padding: 12px 16px 12px 16px; text-align: lefts; font-size: 16px; position: relative; top: 160px;">cancel</button>
                         </div>
                     </div>
                 </form>
