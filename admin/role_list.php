@@ -17,7 +17,7 @@
            </div>
           <!-- Role Add Button and Form -->
              <div class="col-md-6 text-right">
-                    <a href="role_add.php" target="_blank">
+                    <a href="role_add.php">
                      <button class="btn btn-primary" style="float: right; background-color: light-blue; color: white; border: none">
                     <i class="fa fa-user"></i> Role add
                    </button>
