@@ -19,7 +19,7 @@ include 'common/header.php';
 <section class="content">
     <div class="container-fluid">
         <div class="row">
-            <div class="border border-3 p-3 w-100 " style="height:57vh;">
+            <div class="border border-3 p-3 w-100 shadow p-3 mb-5 bg-body rounded " style="height:57vh;">
                 <form action="role_list.php" method="post">
                     <div class="row">
                         <div class="col-md-3">
