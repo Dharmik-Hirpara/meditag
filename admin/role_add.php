@@ -16,7 +16,6 @@ include 'common/header.php';
         </div>
     </div>
 </div>
-
 <section class="content">
     <div class="container-fluid">
         <div class="row">
@@ -51,7 +50,6 @@ include 'common/header.php';
                             </div>
                         </div>
                     </div>
-
                     <div class="row">
                         <div class="col-md-3">
                             <button type="submit" class="btn btn-primary" style="margin-left:3px; background-color: light blue; 
@@ -64,15 +62,10 @@ include 'common/header.php';
                          
                         </div>
                     </div>
-
                 </form>
-
             </div>
         </div>
-
         <!-- Add more form fields as needed -->
-
-
     </div>
     </div>
 </section>
