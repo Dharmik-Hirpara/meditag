@@ -49,8 +49,8 @@ include 'common/header.php';
                     </div>
                     <div class="row">
                         <div class="col-md-3">
-                            <button type="submit" class="btn btn-primary" style="margin-right: 5px; background-color: #007bff; border: none; color: white; padding: 12px 16px; font-size: 16px;">Submit</button>
-                            <button type="submit" class="btn btn-primary" style="background-color: grey; border: none; color: white; padding: 12px 16px; font-size: 16px;">Cancel</button>
+                            <button type="submit" class="btn btn-primary" style="margin-right: 5px; background-color: #007bff; border: none; color: white; padding: 5px 12px; font-size: 16px;">Submit</button>
+                            <button type="submit" class="btn btn-primary" style="background-color: grey; border: none; color: white; padding: 5px 12px; font-size: 16px;">Cancel</button>
                         </div>
                     </div>
                 </form>
