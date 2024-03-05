@@ -24,7 +24,6 @@
               <i class="fa fa-user"></i> Role add
             </button>
           </a>
-          
           <!-- Rest of your code -->
         </div>
         </form>
