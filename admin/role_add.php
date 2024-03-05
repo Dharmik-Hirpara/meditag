@@ -4,23 +4,22 @@ include 'common/header.php';
 
 <div class="content-header">
     <div class="container-fluid">
-        <div class="row mb-80">
-            <div>
+        <div class="row mb-5">
+            <div class="col">
                 <h1 class="card-title">Role Add</h1>
             </div>
             <div class="col-sm-6">
-                <ol class="breadcrumb float-sm-right ">
-                </ol>
+                <ol class="breadcrumb float-sm-right"></ol>
             </div>
         </div>
     </div>
 </div>
-<section class="content">
-    <div class="container-fluid ">
-        
-        <div class="row ">
-            <div class="border border-3 p-3 w-100 shadow p-3 mb-5 bg-body rounded card card-primary card-outline" style="border-top: 3px solid #007bff !important;" >
 
+<section class="content">
+    <div class="container-fluid">
+
+        <div class="row">
+            <div class="border border-3 p-3 w-100 shadow p-3 mb-5 bg-body rounded card card-primary card-outline" style="border-top: 3px solid #007bff !important;">
 
                 <form action="role_list.php" method="post">
                     <div class="row">
@@ -49,15 +48,16 @@ include 'common/header.php';
                     </div>
                     <div class="row">
                         <div class="col-md-3">
-                            <button type="submit" class="btn btn-primary" style="margin-right: 5px; background-color: #007bff; border: none; color: white; padding: 5px 12px; font-size: 16px;">Submit</button>
-                            <button type="submit" class="btn btn-primary" style="background-color: grey; border: none; color: white; padding: 5px 12px; font-size: 16px;">Cancel</button>
+                        <div class="btn-group">
+                                    <button type="submit" class="btn btn-primary mr-1">Submit</button>
+                                    <button type="submit" class="btn btn-secondary">Cancel</button>
+                                </div>
                         </div>
                     </div>
                 </form>
             </div>
         </div>
         <!-- Add more form fields as needed -->
-    </div>
     </div>
 </section>
 
