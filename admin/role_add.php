@@ -8,7 +8,6 @@ include 'common/header.php';
             <div>
                 <h1 class="card-title">Role Add</h1>
             </div>
-            <hr class=col-6>
             <div class="col-sm-6">
                 <ol class="breadcrumb float-sm-right ">
                 </ol>
@@ -20,7 +19,7 @@ include 'common/header.php';
     <div class="container-fluid ">
         
         <div class="row ">
-            <div class="border border-3 p-3 w-100 shadow p-3 mb-5 bg-body rounded card card-primary card-outline" style="height:57vh; border-top: 8px solid blue; background-color: white; border-top: 3px solid #007bff !important;" >
+            <div class="border border-3 p-3 w-100 shadow p-3 mb-5 bg-body rounded card card-primary card-outline" style="border-top: 3px solid #007bff !important;" >
 
 
                 <form action="role_list.php" method="post">
@@ -50,13 +49,8 @@ include 'common/header.php';
                     </div>
                     <div class="row">
                         <div class="col-md-3">
-                            <button type="submit" class="btn btn-primary" style="margin-left:3px; background-color: light blue; 
-                            border: none; color: white; padding: 12px 16px 12px 16px; text-align: left; font-size: 16px; position: relative; top: 160px;">Submit</button>
-
-                        </div>
-                        <div>
-                            <button type="submit" class="btn btn-primary" style="margin-right:2px; background-color: grey; 
-                            border: none; color: white; padding: 12px 16px 12px 16px; text-align: lefts; font-size: 16px; position: relative; top: 160px;">cancel</button>
+                            <button type="submit" class="btn btn-primary" style="margin-right: 5px; background-color: #007bff; border: none; color: white; padding: 12px 16px; font-size: 16px;">Submit</button>
+                            <button type="submit" class="btn btn-primary" style="background-color: grey; border: none; color: white; padding: 12px 16px; font-size: 16px;">Cancel</button>
                         </div>
                     </div>
                 </form>
