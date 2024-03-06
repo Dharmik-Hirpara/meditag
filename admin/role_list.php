@@ -16,13 +16,13 @@
 <body>
   <div class="content-header">
     <div class="container-fluid">
-      <div class="row justify-content-between mb-2">
+      <div class="row justify-content-between mb-3">
         <!-- Role Title -->
         <div class="col-md-6">
           <h1 class="m-0">Role Master</h1>
         </div>
         <!-- Role Add Button and Form -->
-        <div class="col-md-6 text-right">
+        <div class="col-md-6 text-md-end">
           <a href="role_add.php" class="btn btn-primary">
             <i class="fa fa-user"></i> Role Add
           </a>
@@ -32,7 +32,7 @@
   </div>
 
   <div class="card card-outline card-primary m-3">
-    <div class="card-header ">
+    <div class="card-header">
       <h1 class="card-title">Search Panel</h1>
       <div class="card-tools">
         <button type="button" class="btn btn-tool" data-bs-toggle="collapse" data-bs-target="#searchPanel">
@@ -70,54 +70,50 @@
         </div>
       </div>
     </div>
+  </div>
 
-    <div class="card-body">
-      <div class="col-12">
-        <div class="card">
-          <div class="card-header">
-            <h3 class="card-title">Entries</h3>
-          </div>
-
-          <div class="card-body">
-            <table class="table table-bordered">
-              <thead class="table-primary text-white">
-                <tr>
-                  <th class="text-center">Action</th>
-                  <th class="text-center">Role ID</th>
-                  <th class="text-center">Status</th>
-                  <th class="text-center">Role Name</th>
-                  <th class="text-center">Entry Date</th>
-                </tr>
-              </thead>
-
-              <tbody>
-                <tr>
-                  <td class="text-center">
-                    <div class="btn-group" role="group">
-                      <div class="d-flex">
-                        <button type="button" class="btn btn-warning btn-sm rounded flex-grow-1 mr-2">
-                          <i class="fas fa-edit fa-xs"></i>
-                        </button>
-                        <button type="button" class="btn btn-danger btn-sm rounded flex-grow-1">
-                          <i class="fas fa-trash-alt fa-xs"></i>
-                        </button>
-                      </div>
-                    </div>
-                  </td>
-                  <td class="text-center"></td>
-                  <td class="text-center"></td>
-                  <td class="text-center"></td>
-                  <td class="text-center"></td>
-                </tr>
-                <!-- Add more rows as needed -->
-              </tbody>
-            </table>
-          </div>
-
-          <div class="card-footer clearfix"></div>
-        </div>
-      </div>
+  <div class="card card-outline card-primary m-3">
+    <div class="card-header">
+      <h3 class="card-title">Entries</h3>
     </div>
+
+    <div class="card-body p-0">
+      <table class="table table-bordered m-0">
+        <thead class="table-primary text-white">
+          <tr>
+            <th class="text-center">Action</th>
+            <th class="text-center">Role ID</th>
+            <th class="text-center">Status</th>
+            <th class="text-center">Role Name</th>
+            <th class="text-center">Entry Date</th>
+          </tr>
+        </thead>
+
+        <tbody>
+          <tr>
+            <td class="text-center">
+              <div class="btn-group" role="group">
+                <div class="d-flex">
+                  <button type="button" class="btn btn-warning btn-sm rounded flex-grow-1 mr-2">
+                    <i class="fas fa-edit fa-xs"></i>
+                  </button>
+                  <button type="button" class="btn btn-danger btn-sm rounded flex-grow-1">
+                    <i class="fas fa-trash-alt fa-xs"></i>
+                  </button>
+                </div>
+              </div>
+            </td>
+            <td class="text-center"></td>
+            <td class="text-center"></td>
+            <td class="text-center"></td>
+            <td class="text-center"></td>
+          </tr>
+          <!-- Add more rows as needed -->
+        </tbody>
+      </table>
+    </div>
+
+    <div class="card-footer clearfix"></div>
   </div>
 
   <!-- Content Section -->
