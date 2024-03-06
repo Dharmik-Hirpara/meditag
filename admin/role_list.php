@@ -16,7 +16,7 @@
 <body>
   <div class="content-header">
     <div class="container-fluid">
-      <div class="row justify-content-between mb-3">
+      <div class="row">
         <!-- Role Title -->
         <div class="col-md-6">
           <h1 class="m-0">Role Master</h1>
@@ -31,7 +31,7 @@
     </div>
   </div>
 
-  <div class="card card-outline card-primary m-3">
+  <div class="card card-outline card-primary m-3 mb-1">
     <div class="card-header">
       <h1 class="card-title">Search Panel</h1>
       <div class="card-tools">
@@ -74,7 +74,11 @@
 
   <div class="card card-outline card-primary m-3">
     <div class="card-header">
-      <h3 class="card-title">Entries</h3>
+      <h3 class="card-title" >Show Entries </h3>
+      <select class="col-md-1" style="padding-left:10px;">
+        <option>1</option>
+        <option>1</option>
+      </select>
     </div>
 
     <div class="card-body p-0">
@@ -109,11 +113,27 @@
             <td class="text-center"></td>
           </tr>
           <!-- Add more rows as needed -->
+          <tr>
+            <td class="text-center">
+              <div class="btn-group" role="group">
+                <div class="d-flex">
+                  <button type="button" class="btn btn-warning btn-sm rounded flex-grow-1 mr-2">
+                    <i class="fas fa-edit fa-xs"></i>
+                  </button>
+                  <button type="button" class="btn btn-danger btn-sm rounded flex-grow-1">
+                    <i class="fas fa-trash-alt fa-xs"></i>
+                  </button>
+                </div>
+              </div>
+            </td>
+            <td class="text-center"></td>
+            <td class="text-center"></td>
+            <td class="text-center"></td>
+            <td class="text-center"></td>
+          </tr>
         </tbody>
       </table>
     </div>
-
-    <div class="card-footer clearfix"></div>
   </div>
 
   <!-- Content Section -->
