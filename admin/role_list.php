@@ -67,60 +67,52 @@
     </div>
   </div>
   <div class="col-12">
-  <div class="card">
-<div class="card-header">
-<h3 class="card-title">Bordered Table</h3>
-</div>
+    <div class="card">
+      <div class="card-header">
+        <h3 class="card-title">Entries</h3>
+      </div>
 
-<div class="card-body">
-<table class="table table-bordered">
-<thead>
-<tr>
-<th style="width: 10px">#</th>
-<th>Task</th>
-<th>Progress</th>
-<th style="width: 40px">Label</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>1.</td>
-<td>Update software</td>
-<td>
-<div class="progress progress-xs">
-<div class="progress-bar progress-bar-danger" style="width: 55%"></div>
-</div>
-</td>
-<td><span class="badge bg-danger">55%</span></td>
-</tr>
-<tr>
-<td>2.</td>
-<td>Clean database</td>
-<td>
-<div class="progress progress-xs">
-<div class="progress-bar bg-warning" style="width: 70%"></div>
-</div>
-</td>
-<td><span class="badge bg-warning">70%</span></td>
-</tr>
-<tr>
-<td>3.</td>
-<td>Cron job running</td>
-<td>
 
-</td>
-<td><span class="badge bg-success">90%</span></td>
-</tr>
-</tbody>
-</table>
-</div>
+      <div class="card-body">
+        
+        <table class="table table-bordered">
+          <thead class="table-primary text-white">
+            <tr>
+              <th class="text-center">Action</th>
+              <th class="text-center">Role ID</th>
+              <th class="text-center">Status</th>
+              <th class="text-center">Role Name</th>
+              <th class="text-center">Entry Date</th>
+            </tr>
+          </thead>
 
-<div class="card-footer clearfix">
-
-</ul>
-</div>
-</div>
+          <tbody>
+            <tr>
+              <td class="text-center">
+                <div class="btn-group" role="group">
+                  <div class="d-flex">
+                    <button type="button" class="btn btn-warning btn-sm rounded flex-grow-1 mr-2">
+                      <i class="fas fa-edit fa-xs"></i>
+                    </button>
+                    <button type="button" class="btn btn-danger btn-sm rounded flex-grow-1">
+                      <i class="fas fa-trash-alt fa-xs"></i>
+                    </button>
+                  </div>
+                </div>
+              </td>
+              <td class="text-center"></td>
+              <td class="text-center"></td>
+              <td class="text-center"></td>
+              <td class="text-center"></td>
+            </tr>
+            <!-- Add more rows as needed -->
+          </tbody>
         </table>
+      </div>
+
+
+
+      <div class="card-footer clearfix">
       </div>
     </div>
   </div>
@@ -130,7 +122,6 @@
       <div class="row"></div>
     </div>
   </section>
-
   <!-- Include Bootstrap JS and footer.php -->
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
   <?php include 'common/footer.php'; ?>
