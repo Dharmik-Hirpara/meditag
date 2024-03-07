@@ -24,7 +24,7 @@
         <!-- Role Add Button and Form -->
         <div class="col-md-6 text-md-end">
           <a href="role_add.php" class="btn btn-primary">
-            <i class="fa fa-user"></i> Role Add
+            Role Add
           </a>
         </div>
       </div>
@@ -35,9 +35,17 @@
     <div class="card-header">
       <h1 class="card-title">Search Panel</h1>
       <div class="card-tools">
-        <button type="button" class="btn btn-tool" data-bs-toggle="collapse" data-bs-target="#searchPanel">
-          <i class="fas fa-minus"></i>
+        <button type="button" class="btn btn-tool" data-bs-toggle="collapse" data-bs-target="#searchPanel" onclick="toggleIcon(this)">
+          <i class="fas fa-plus"></i>
         </button>
+
+        <script>
+          function toggleIcon(element) {
+            var icon = element.querySelector('i');
+            icon.classList.toggle('fa-plus');
+            icon.classList.toggle('fa-minus');
+          }
+        </script>
       </div>
     </div>
 
@@ -73,23 +81,19 @@
   </div>
 
   <div class="card card-outline card-primary m-3">
-    <div class="card-header">
-      <h3 class="card-title">Show Entries</h3>
-      <select style="padding-left:1px;">
-        <option>1</option>
-        <option>2</option>
-      </select>
-    </div>
-
     <div class="card-body p-0">
       <table class="table table-bordered m-0">
         <thead class="table-primary text-white">
           <tr>
             <th class="text-center">Action</th>
-            <th class="text-center">Role ID</th>
+            <th class="text-center"> Id</th>
+            <th class="text-center">Name</th>
             <th class="text-center">Status</th>
-            <th class="text-center">Role Name</th>
+            <th class="text-center">Is  Delete</th>
             <th class="text-center">Entry Date</th>
+            <th class="text-center">Entry By</th>
+            <th class="text-center">Update Date</th>
+            <th class="text-center">Update By</th>
           </tr>
         </thead>
 
@@ -97,43 +101,74 @@
           <tr>
             <td class="text-center">
               <div class="btn-group" role="group">
-                <div class="d-flex">
-                  <button type="button" class="btn btn-warning btn-sm rounded flex-grow-1 mr-2">
-                    <i class="fas fa-edit fa-xs"></i>
-                  </button>
-                  <button type="button" class="btn btn-danger btn-sm rounded flex-grow-1">
-                    <i class="fas fa-trash-alt fa-xs"></i>
-                  </button>
-                </div>
+                <button type="button" class="btn btn-warning btn-sm rounded flex-grow-1 mr-2">
+                  <i class="fas fa-edit fa-xs"></i>
+                </button>
+                <button type="button" class="btn btn-danger btn-sm rounded flex-grow-1">
+                  <i class="fas fa-trash-alt fa-xs"></i>
+                </button>
               </div>
             </td>
             <td class="text-center"></td>
             <td class="text-center"></td>
             <td class="text-center"></td>
             <td class="text-center"></td>
+            <td class="text-center"></td>
+            <td class="text-center"></td>
+            <td class="text-center"></td>
+            <td class="text-center"></td>
+           
+            
           </tr>
           <!-- Add more rows as needed -->
           <tr>
             <td class="text-center">
               <div class="btn-group" role="group">
-                <div class="d-flex">
-                  <button type="button" class="btn btn-warning btn-sm rounded flex-grow-1 mr-2">
-                    <i class="fas fa-edit fa-xs"></i>
-                  </button>
-                  <button type="button" class="btn btn-danger btn-sm rounded flex-grow-1">
-                    <i class="fas fa-trash-alt fa-xs"></i>
-                  </button>
-                </div>
+                <button type="button" class="btn btn-warning btn-sm rounded flex-grow-1 mr-2">
+                  <i class="fas fa-edit fa-xs"></i>
+                </button>
+                <button type="button" class="btn btn-danger btn-sm rounded flex-grow-1">
+                  <i class="fas fa-trash-alt fa-xs"></i>
+                </button>
               </div>
             </td>
             <td class="text-center"></td>
             <td class="text-center"></td>
             <td class="text-center"></td>
             <td class="text-center"></td>
+            <td class="text-center"></td>
+            <td class="text-center"></td>
+            <td class="text-center"></td>
+            <td class="text-center"></td>
+            
           </tr>
         </tbody>
       </table>
     </div>
+
+    <!-- ---------------------------------------------------- -->
+    <div class="card-footer py-2">
+      <!-- Pagination -->
+      <ul class="pagination justify-content-end mt-0 mb-0" style="font-size: 0.1rem;">
+        <li class="page-item disabled">
+          <span class="page-link">Previous</span>
+        </li>
+        <li class="page-item active" aria-current="page">
+          <span class="page-link">1</span>
+        </li>
+        <li class="page-item">
+          <a class="page-link" href="#">2</a>
+        </li>
+        <li class="page-item">
+          <a class="page-link" href="#">3</a>
+        </li>
+        <li class="page-item">
+          <a class="page-link" href="#">Next</a>
+        </li>
+      </ul>
+    </div>
+
+    <!-- ---------------------------------------------------------------- -->
   </div>
 
   <!-- Content Section -->
