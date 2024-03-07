@@ -147,27 +147,26 @@
     </div>
 
     <!-- ---------------------------------------------------- -->
-    
-    <div class="card-footer py-2 border-primary">
-      <!-- Pagination -->
-      <ul class="pagination justify-content-end mt-0 mb-0 " style="font-size: 0.1rem;">
+    <div class="card-footer  py-2 border-primary border-bottom ">
+    <!-- Pagination -->
+    <ul class="pagination justify-content-end mt-0 mb-0 " style="font-size: 0.1rem;">
         <li class="page-item disabled">
-          <span class="page-link">Previous</span>
+            <span class="page-link">Previous</span>
         </li>
         <li class="page-item active" aria-current="page">
-          <span class="page-link">1</span>
+            <span class="page-link">1</span>
         </li>
         <li class="page-item">
-          <a class="page-link" href="#">2</a>
+            <a class="page-link" href="#">2</a>
         </li>
         <li class="page-item">
-          <a class="page-link" href="#">3</a>
+            <a class="page-link" href="#">3</a>
         </li>
         <li class="page-item">
-          <a class="page-link" href="#">Next</a>
+            <a class="page-link" href="#">Next</a>
         </li>
-      </ul>
-    </div>
+    </ul>
+</div>
 
     <!-- ---------------------------------------------------------------- -->
   </div>
