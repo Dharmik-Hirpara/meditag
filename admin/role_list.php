@@ -74,10 +74,10 @@
 
   <div class="card card-outline card-primary m-3">
     <div class="card-header">
-      <h3 class="card-title" >Show Entries </h3>
-      <select class="col-md-1" style="padding-left:10px;">
+      <h3 class="card-title">Show Entries</h3>
+      <select style="padding-left:1px;">
         <option>1</option>
-        <option>1</option>
+        <option>2</option>
       </select>
     </div>
 
