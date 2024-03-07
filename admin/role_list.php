@@ -89,7 +89,7 @@
             <th class="text-center"> Id</th>
             <th class="text-center">Name</th>
             <th class="text-center">Status</th>
-            <th class="text-center">Is  Delete</th>
+            <th class="text-center">Is Delete</th>
             <th class="text-center">Entry Date</th>
             <th class="text-center">Entry By</th>
             <th class="text-center">Update Date</th>
@@ -117,8 +117,8 @@
             <td class="text-center"></td>
             <td class="text-center"></td>
             <td class="text-center"></td>
-           
-            
+
+
           </tr>
           <!-- Add more rows as needed -->
           <tr>
@@ -140,16 +140,17 @@
             <td class="text-center"></td>
             <td class="text-center"></td>
             <td class="text-center"></td>
-            
+
           </tr>
         </tbody>
       </table>
     </div>
 
     <!-- ---------------------------------------------------- -->
-    <div class="card-footer py-2">
+    
+    <div class="card-footer py-2 border-primary">
       <!-- Pagination -->
-      <ul class="pagination justify-content-end mt-0 mb-0" style="font-size: 0.1rem;">
+      <ul class="pagination justify-content-end mt-0 mb-0 " style="font-size: 0.1rem;">
         <li class="page-item disabled">
           <span class="page-link">Previous</span>
         </li>
