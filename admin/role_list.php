@@ -147,7 +147,7 @@
     </div>
 
     <!-- ---------------------------------------------------- -->
-    <div class="card-footer  py-2 border-primary border-bottom ">
+    <div class="card-footer  py-2 border-primary border-bottom bordee">
     <!-- Pagination -->
     <ul class="pagination justify-content-end mt-0 mb-0 " style="font-size: 0.1rem;">
         <li class="page-item disabled">
