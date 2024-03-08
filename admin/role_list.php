@@ -31,7 +31,7 @@
         </div>
     </div>
 
-    <div class="card card-outline card-primary m-3 mb-1 border border-3"> <!-- Updated border and border-3 for a more bold border -->
+    <div class="card card-outline card-primary m-3 mb-1 border-3"> <!-- Updated border-3 for a more bold border -->
         <div class="card-header">
             <h1 class="card-title">Search Panel</h1>
             <div class="card-tools">
@@ -81,7 +81,7 @@
         </div>
     </div>
 
-    <div class="card card-outline card-primary m-3 border border-3"> <!-- Updated border and border-3 for a more bold border -->
+    <div class="card card-outline card-primary m-3">
         <div class="card-body p-0">
             <table class="table table-bordered m-0">
                 <thead class="table-primary text-white">
