@@ -11,6 +11,12 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
   <!-- Include header.php -->
   <?php include 'common/header.php'; ?>
+  <style>
+    /* Additional CSS styles */
+    .blue-border {
+      border-bottom: 2px solid #007BFF; /* Blue border color */
+    }
+  </style>
 </head>
 
 <body>
@@ -163,20 +169,17 @@
         </tbody>
       </table>
     </div>
-    <div class="card-footer clearfix">
- 
-
-<ul class="pagination pagination-sm m-0 float-right p-0" >
-<li class="page-item"><a class="page-link" href="#">«</a></li>
-<li class="page-item"><a class="page-link" href="#">1</a></li>
-<li class="page-item"><a class="page-link" href="#">2</a></li>
-<li class="page-item"><a class="page-link" href="#">3</a></li>
-<li class="page-item"><a class="page-link" href="#">»</a></li>
-</ul>
-</div>
+    <div class="card-footer clearfix blue-border">
+      <!-- Pagination -->
+      <ul class="pagination pagination-sm m-0 float-right p-0">
+        <li class="page-item"><a class="page-link" href="#">«</a></li>
+        <li class="page-item"><a class="page-link" href="#">1</a></li>
+        <li class="page-item"><a class="page-link" href="#">2</a></li>
+        <li class="page-item"><a class="page-link" href="#">3</a></li>
+        <li class="page-item"><a class="page-link" href="#">»</a></li>
+      </ul>
+    </div>
   </div>
-
-  
 
   <!-- Content Section -->
   <section class="content">
@@ -190,12 +193,7 @@
   <?php include 'common/footer.php'; ?>
 
   <!-- Add the resetForm function -->
-  <script>
-    function resetForm() {
-      // Reset the form by setting input values to an empty string
-      document.getElementById('searchForm').reset();
-    }
-  </script>
+ 
 </body>
 
 </html>
