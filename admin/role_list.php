@@ -80,7 +80,7 @@
     </div>
   </div>
 
-  <div class="card card-outline card-primary m-3">
+  <div class="card card-outline card-primary m-3 border-3"> <!-- Updated border-3 for a more bold border -->
     <div class="card-body p-0">
       <table class="table table-bordered m-0">
         <thead class="table-primary text-white">
@@ -109,16 +109,7 @@
                 </button>
               </div>
             </td>
-            <td class="text-center"></td>
-            <td class="text-center"></td>
-            <td class="text-center"></td>
-            <td class="text-center"></td>
-            <td class="text-center"></td>
-            <td class="text-center"></td>
-            <td class="text-center"></td>
-            <td class="text-center"></td>
-
-
+            <!-- Add more columns as needed -->
           </tr>
           <!-- Add more rows as needed -->
           <tr>
@@ -132,44 +123,37 @@
                 </button>
               </div>
             </td>
-            <td class="text-center"></td>
-            <td class="text-center"></td>
-            <td class="text-center"></td>
-            <td class="text-center"></td>
-            <td class="text-center"></td>
-            <td class="text-center"></td>
-            <td class="text-center"></td>
-            <td class="text-center"></td>
-
+            <!-- Add more columns as needed -->
           </tr>
         </tbody>
       </table>
     </div>
 
     <!-- ---------------------------------------------------- -->
-    <div class="card-footer  py-2 border-primary border-bottom bordee">
-    <!-- Pagination -->
-    <ul class="pagination justify-content-end mt-0 mb-0 " style="font-size: 0.1rem;">
+    <div class="card-footer py-2 border-primary border-3"> <!-- Updated border-3 for a more bold border -->
+      <!-- Pagination -->
+      <ul class="pagination justify-content-end mt-0 mb-0 " style="font-size: 0.1rem;">
         <li class="page-item disabled">
-            <span class="page-link">Previous</span>
+          <span class="page-link">Previous</span>
         </li>
         <li class="page-item active" aria-current="page">
-            <span class="page-link">1</span>
+          <span class="page-link">1</span>
         </li>
         <li class="page-item">
-            <a class="page-link" href="#">2</a>
+          <a class="page-link" href="#">2</a>
         </li>
         <li class="page-item">
-            <a class="page-link" href="#">3</a>
+          <a class="page-link" href="#">3</a>
         </li>
         <li class="page-item">
-            <a class="page-link" href="#">Next</a>
+          <a class="page-link" href="#">Next</a>
         </li>
-    </ul>
-</div>
+      </ul>
+    </div>
 
     <!-- ---------------------------------------------------------------- -->
   </div>
+
 
   <!-- Content Section -->
   <section class="content">
