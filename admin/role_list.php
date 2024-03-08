@@ -193,7 +193,12 @@
   <?php include 'common/footer.php'; ?>
 
   <!-- Add the resetForm function -->
- 
+  <script>
+    function resetForm() {
+      // Reset the form by setting input values to an empty string
+      document.getElementById('searchForm').reset();
+    }
+  </script>
 </body>
 
 </html>
