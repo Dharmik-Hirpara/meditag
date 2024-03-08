@@ -57,27 +57,46 @@
             <div class="col-md-6">
               <div class="form-group">
                 <label for="roleNumberInput">Role Id</label>
-                <input type="number" class="form-control" id="roleNumberInput" placeholder="Enter Id">
+                <input type="number" class="form-control" id="roleNumberInput" name="roleNumberInput" placeholder="Enter Id">
               </div>
             </div>
             <div class="col-md-6">
               <div class="form-group">
                 <label for="roleNameInput">Role Name</label>
-                <input type="text" class="form-control" id="roleNameInput" placeholder="Enter Name">
+                <input type="text" class="form-control" id="roleNameInput" name="roleNameInput" placeholder="Enter Name">
               </div>
+            </div>
+          </div>
+
+          <div class="row">
+            <div class="col-md-4 mt-1">
+              <!-- Change type to "button" to prevent form submission -->
+              <button type="button" class="btn btn-dark me-2" onclick="resetForm()">Reset</button>
+              <button type="submit" class="btn btn-primary">Submit</button>
             </div>
           </div>
         </form>
       </div>
 
       <div class="card-footer">
-        <div class="row">
-          <div class="col-md-4 mt-1">
-            <!-- Change type to "button" to prevent form submission -->
-            <button type="button" class="btn btn-dark me-2" onclick="resetForm()">Reset</button>
-            <button type="submit" class="btn btn-primary">Submit</button>
-          </div>
-        </div>
+        <!-- Pagination -->
+        <ul class="pagination justify-content-end mt-0 mb-0 " style="font-size: 0.1rem;">
+          <li class="page-item disabled">
+            <span class="page-link">Previous</span>
+          </li>
+          <li class="page-item active" aria-current="page">
+            <span class="page-link">1</span>
+          </li>
+          <li class="page-item">
+            <a class="page-link" href="#">2</a>
+          </li>
+          <li class="page-item">
+            <a class="page-link" href="#">3</a>
+          </li>
+          <li class="page-item">
+            <a class="page-link" href="#">Next</a>
+          </li>
+        </ul>
       </div>
     </div>
   </div>
@@ -119,8 +138,6 @@
             <td class="text-center"></td>
             <td class="text-center"></td>
             <td class="text-center"></td>
-
-
           </tr>
           <!-- Add more rows as needed -->
           <tr>
@@ -142,35 +159,10 @@
             <td class="text-center"></td>
             <td class="text-center"></td>
             <td class="text-center"></td>
-
           </tr>
         </tbody>
       </table>
     </div>
-
-    <!-- ---------------------------------------------------- -->
-    <div class="card-footer  py-2 border-primary border-bottom bordee">
-    <!-- Pagination -->
-    <ul class="pagination justify-content-end mt-0 mb-0 " style="font-size: 0.1rem;">
-        <li class="page-item disabled">
-            <span class="page-link">Previous</span>
-        </li>
-        <li class="page-item active" aria-current="page">
-            <span class="page-link">1</span>
-        </li>
-        <li class="page-item">
-            <a class="page-link" href="#">2</a>
-        </li>
-        <li class="page-item">
-            <a class="page-link" href="#">3</a>
-        </li>
-        <li class="page-item">
-            <a class="page-link" href="#">Next</a>
-        </li>
-    </ul>
-</div>
-
-    <!-- ---------------------------------------------------------------- -->
   </div>
 
   <!-- Content Section -->
@@ -183,6 +175,14 @@
   <!-- Include Bootstrap JS and footer.php -->
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
   <?php include 'common/footer.php'; ?>
+
+  <!-- Add the resetForm function -->
+  <script>
+    function resetForm() {
+      // Reset the form by setting input values to an empty string
+      document.getElementById('searchForm').reset();
+    }
+  </script>
 </body>
 
 </html>
