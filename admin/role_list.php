@@ -80,7 +80,7 @@
 
       <div class="card-footer">
         <!-- Pagination -->
-        <ul class="pagination justify-content-end mt-0 mb-0 " style="font-size: 0.1rem;">
+        <ul class="pagination justify-content-end mt-0 mb-0">
           <li class="page-item disabled">
             <span class="page-link">Previous</span>
           </li>
@@ -163,7 +163,20 @@
         </tbody>
       </table>
     </div>
+    <div class="card-footer clearfix">
+ 
+
+<ul class="pagination pagination-sm m-0 float-right p-0" >
+<li class="page-item"><a class="page-link" href="#">«</a></li>
+<li class="page-item"><a class="page-link" href="#">1</a></li>
+<li class="page-item"><a class="page-link" href="#">2</a></li>
+<li class="page-item"><a class="page-link" href="#">3</a></li>
+<li class="page-item"><a class="page-link" href="#">»</a></li>
+</ul>
+</div>
   </div>
+
+  
 
   <!-- Content Section -->
   <section class="content">
