@@ -51,7 +51,8 @@
 
     <div class="collapse" id="searchPanel">
       <div class="card-body">
-        <form>
+        <!-- Add the form tag with an ID -->
+        <form id="searchForm">
           <div class="row">
             <div class="col-md-6">
               <div class="form-group">
@@ -72,7 +73,8 @@
       <div class="card-footer">
         <div class="row">
           <div class="col-md-4 mt-1">
-            <button type="reset" class="btn btn-dark me-2">Reset</button>
+            <!-- Change type to "button" to prevent form submission -->
+            <button type="button" class="btn btn-dark me-2" onclick="resetForm()">Reset</button>
             <button type="submit" class="btn btn-primary">Submit</button>
           </div>
         </div>
