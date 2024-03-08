@@ -31,7 +31,7 @@
         </div>
     </div>
 
-    <div class="card card-outline card-primary m-3 mb-1 border-3"> <!-- Updated border-3 for a more bold border -->
+    <div class="card card-outline card-primary m-3 mb-1"> <!-- Updated border-3 for a more bold border -->
         <div class="card-header">
             <h1 class="card-title">Search Panel</h1>
             <div class="card-tools">
@@ -51,7 +51,7 @@
         </div>
 
         <div class="collapse" id="searchPanel">
-            <div class="card-body">
+            <div class="card-body p-0"> <!-- Removed the shadow from this line -->
                 <form>
                     <div class="row">
                         <div class="col-md-6">
@@ -79,7 +79,9 @@
                 </div>
             </div>
         </div>
-    </div>
+   
+   
+      </div>
 
     <div class="card card-outline card-primary m-3">
         <div class="card-body p-0">
@@ -149,8 +151,9 @@
         </div>
 
         <!-- ---------------------------------------------------- -->
-        <div class="card-footer  py-2 border-primary border-bottom border-3"> <!-- Updated border-3 for a more bold border -->
-            <!-- Pagination -->
+        <div class="card-footer  py-2 border-primary  border-3"> 
+
+
             <ul class="pagination justify-content-end mt-0 mb-0 " style="font-size: 0.1rem;">
                 <li class="page-item disabled">
                     <span class="page-link">Previous</span>
