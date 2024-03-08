@@ -14,7 +14,7 @@
   <style>
     /* Additional CSS styles */
     .blue-border {
-      border-bottom: 2px solid #007BFF; /* Blue border color */
+      border-bottom: 3px solid #007BFF; /* Blue border color */
     }
   </style>
 </head>
@@ -37,7 +37,7 @@
     </div>
   </div>
 
-  <div class="card card-outline card-primary m-3 mb-1">
+  <div class="card card-outline card-primary m-3 mb-1 blue-border">
     <div class="card-header">
       <h1 class="card-title">Search Panel</h1>
       <div class="card-tools">
