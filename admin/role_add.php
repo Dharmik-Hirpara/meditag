@@ -2,25 +2,52 @@
 include 'connect.php';
 include 'common/header.php';
 
+// Assuming Connection_Lib class is defined in 'connect.php'
 $Connection_Lib = new Connection_Lib();
 $DB = $Connection_Lib->Connection();
 
-// $qry = "SELECT * FROM role_master";
-// $result = $DB->query($qry);
-$Role_Name = ($_POST['roleName'] ? $_POST['roleName'] : "");
-$Role_Description = ($_POST['roleDescription1'] ? $_POST['roleDescription1'] : "");
-$Role_Status = @$_POST['roleStatus'] != "" ? $_POST['roleStatus'] : "";
+$Role_Name = isset($_POST['roleName']) ? $_POST['roleName'] : "";
+$Role_Description = isset($_POST['roleDescription1']) ? $_POST['roleDescription1'] : "";
+$Role_Status = isset($_POST['roleStatus']) ? $_POST['roleStatus'] : "";
 
-if ($Role_Name != "" && $Role_Description != "" && $Role_Status != "") {
-	/* Insert Query here */
+$errors = [];
+
+// Check if the form has been submitted
+if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+	// Client-side validation using HTML5 required attribute
+	if (empty($Role_Name)) {
+		$errors[] = "Role Name is required.";
+	}
+
+	if (empty($Role_Description)) {
+		$errors[] = "Role Description is required.";
+	}
+
+	// Server-side validation
+	if (empty($errors)) {
+		// Insert query using prepared statement
+		$insertQuery = "INSERT INTO role_master (Role_Name, Role_Description, Role_Status) VALUES (?, ?, ?)";
+		$stmt = $DB->prepare($insertQuery);
+
+		if ($stmt) {
+			$stmt->bind_param("sss", $Role_Name, $Role_Description, $Role_Status);
+
+			if ($stmt->execute()) {
+				// Redirect to the role list page after successful submission
+				header('Location: role_list.php');
+				exit();
+			} else {
+				echo "Error: " . $stmt->error;
+			}
+
+			$stmt->close();
+		} else {
+			echo "Error: " . $DB->error;
+		}
+	}
 }
 
-echo "<pre>";
-print_r($_POST);
-die;
-
 ?>
-
 <div class="content-header">
 	<div class="container-fluid">
 		<div class="row mb-3 ">
@@ -36,7 +63,6 @@ die;
 
 <section class="content">
 	<div class="container-fluid">
-
 		<div class="row mb-3">
 			<div class="border border-3 p-3 w-100 shadow p-3 mb-3 bg-body rounded card card-primary card-outline text-dark border-bottom pl-0 pr-0" style="border-top: 3px solid #007bff !important; margin-bottom: 0;">
 
@@ -51,19 +77,19 @@ die;
 						<div class="col-md-3">
 							<div class="form-group">
 								<label for="roleName1" class="text-grey">Role Name</label>
-								<input type="text" class="form-control" id="roleName" name="roleName">
+								<input type="text" class="form-control" id="roleName" name="roleName" required>
 							</div>
 						</div>
 						<div class="col-md-3">
 							<div class="form-group">
 								<label for="roleDescription1" class="text-grey">Role Description</label>
-								<input type="text" class="form-control" id="roleDescription1" name="roleDescription1">
+								<input type="text" class="form-control" id="roleDescription1" name="roleDescription1" required>
 							</div>
 						</div>
 						<div class="col-md-3">
 							<div class="form-group">
 								<label for="roleStatus" class="text-grey">Role Status</label>
-								<select class="form-control" id="roleStatus" name="roleStatus">
+								<select class="form-control" id="roleStatus" name="roleStatus" required>
 									<option value="" selected disabled>Select</option>
 									<option value="1">Active</option>
 									<option value="0">Inactive</option>
@@ -74,20 +100,19 @@ die;
 
 					<div class="row mb-1 border-top mt-4">
 						<div class="col-md-3 mt-3">
-							<button type="submit" class="btn btn-secondary mr-3">Back</button>
-							<button type="submit" name="role_add_btn" value="submit" class="btn btn-primary">Submit</button>
+							<button type="button" class="btn btn-secondary mr-3" onclick="window.location.href='role_list.php'">Back</button>
+							<button type="submit" name="role_add_btn" value="submit" class="btn btn-primary " >Submit</button>
 						</div>
 					</div>
-				</form>
 
+				</form>
 			</div>
 
 			<!-- Add more form fields as needed -->
+
 		</div>
 	</div>
 </section>
-
-
 
 <?php
 include 'common/footer.php';
