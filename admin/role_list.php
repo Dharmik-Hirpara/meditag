@@ -22,37 +22,52 @@
 
 <body>
 	<?php
-$servername = "localhost";
-$username = "root";
-$password = "";
-$dbname = "meditag";
+	date_default_timezone_set('Asia/Kolkata');
+	$timezone = date_default_timezone_get();
+	
 
-// Create connection
-$conn = new mysqli($servername, $username, $password, $dbname);
-// Check connection
-if ($conn->connect_error) {
-    die("Connection failed: " . $conn->connect_error);
-}
 
-$sql = "SELECT role_name, role_status, entry_by FROM role_master";
-$result = $conn->query($sql);
-if ($result->num_rows > 0) {
-    // Fetch data as an associative array
-    while ($row = $result->fetch_assoc()) {
-        // Access individual columns using keys
+	$servername = "localhost";
+	$username = "root";
+	$password = "";
+	$dbname = "meditag";
 
-        $data['roleName'] = $row['role_name'];
-        $data['roleStatus'] = $row['role_status'];
-        $data['entryBy'] = $row['entry_by'];
 
-        // Process or display the data as needed
-        
-    }
-}
+	// Create connection
+	$conn = new mysqli($servername, $username, $password, $dbname);
+
+	// Check connection
+	if ($conn->connect_error) {
+		die("Connection failed: " . $conn->connect_error);
+	}
+
+
+
+
+	$sql = "SELECT role_name, role_status, entry_by,DATE_FORMAT(entry_date, '%Y-%m-%d %H:%i:%s') as entry_date, update_by, DATE_FORMAT(update_date, '%Y-%m-%d %H:%i:%s') as update_date FROM role_master";
+	$result = $conn->query($sql);
+	if ($result->num_rows > 0) {
+		// Fetch data as an associative array
+		while ($row = $result->fetch_assoc()) {
+			$rows[] = $row;
+			// Access individual columns using keys
+
+			$data['roleName'] = $row['role_name'];
+			$data['roleStatus'] = $row['role_status'];
+			$data['entryBy'] = $row['entry_by'];
+			$data['entryDate'] = $row['entry_date'];
+			$data['updateDate'] = $row['update_date'];
+			$data['updateby'] = $row['update_by'];
+
+
+			// Process or display the data as needed
+
+		}
+	}
 
 	// print_r();
-// die();
-?>
+	// die();
+	?>
 	<div class="content-header">
 		<div class="container-fluid">
 			<div class="row">
@@ -152,76 +167,33 @@ if ($result->num_rows > 0) {
 				</thead>
 
 				<tbody>
-					<tr>
-						<td class="text-center">
-							<div class="btn-group" role="group">
-								<button type="button" class="btn btn-warning btn-sm rounded flex-grow-1 mr-2">
-									<i class="fas fa-edit fa-xs"></i>
-								</button>
-								<button type="button" class="btn btn-danger btn-sm rounded flex-grow-1">
-									<i class="fas fa-trash-alt fa-xs"></i>
-								</button>
-							</div>
-						</td>
-						<td class="text-center"></td>
-						<td class="text-center"><?php echo $data['roleName'];?></td>
-						<td class="text-center"></td>
-						<td class="text-center"></td>
-						<td class="text-center"></td>
-						<td class="text-center"></td>
-					</tr>
-					<!-- Add more rows as needed -->
-					<tr>
-						<td class="text-center">
-							<div class="btn-group" role="group">
-								<button type="button" class="btn btn-warning btn-sm rounded flex-grow-1 mr-2">
-									<i class="fas fa-edit fa-xs"></i>
-								</button>
-								<button type="button" class="btn btn-danger btn-sm rounded flex-grow-1">
-									<i class="fas fa-trash-alt fa-xs"></i>
-								</button>
-							</div>
-						</td>
-						<td class="text-center"></td>
-						<td class="text-center"></td>
-						<td class="text-center"></td>
-						<td class="text-center"></td>
-						<td class="text-center"></td>
-						<td class="text-center"></td>
-					</tr>
+					<?php
+					// Loop through the data array to display each row
+					foreach ($rows as $row) {
+					?>
+						<tr>
+							<td class="text-center">
+								<div class="btn-group" role="group">
+									<button type="button" class="btn btn-warning btn-sm rounded flex-grow-1 mr-2">
+										<i class="fas fa-edit fa-xs"></i>
+									</button>
+									<button type="button" class="btn btn-danger btn-sm rounded flex-grow-1">
+										<i class="fas fa-trash-alt fa-xs"></i>
+									</button>
+								</div>
+								
+							</td>
+							<td class="text-center"><?php echo $row['role_name']; ?></td>
+							<td class="text-center"><?php echo $row['role_status']; ?></td>
+							<td class="text-center"><?php echo date('Y-m-d H:i:s', strtotime('now')); ?></td>
+							<td class="text-center"><?php echo $row['entry_by']; ?></td>
+							<td class="text-center"><?php echo date('Y-m-d H:i:s', strtotime('now')); ?></td>
+							<td class="text-center"><?php echo $row['update_by']; ?></td>
+
+						</tr>
+					<?php
+					}
+					?>
 				</tbody>
-			</table>
-		</div>
-		<div class="card-footer clearfix ">
-			<!-- Pagination -->
-			<ul class="pagination pagination-sm m-0 float-right p-0">
-				<li class="page-item"><a class="page-link" href="#">«</a></li>
-				<li class="page-item"><a class="page-link" href="#">1</a></li>
-				<li class="page-item"><a class="page-link" href="#">2</a></li>
-				<li class="page-item"><a class="page-link" href="#">3</a></li>
-				<li class="page-item"><a class="page-link" href="#">»</a></li>
-			</ul>
-		</div>
-	</div>
-
-	<!-- Content Section -->
-	<section class="content">
-		<div class="container-fluid">
-			<div class="row"></div>
-		</div>
-	</section>
-
-	<!-- Include Bootstrap JS and footer.php -->
-	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
-	<?php include 'common/footer.php'; ?>
-
-	<!-- Add the resetForm function -->
-	<script>
-		function resetForm() {
-			// Reset the form by setting input values to an empty string
-			document.getElementById('searchForm').reset();
-		}
-	</script>
-</body>
 
 </html>
