@@ -21,6 +21,38 @@
 </head>
 
 <body>
+	<?php
+$servername = "localhost";
+$username = "root";
+$password = "";
+$dbname = "meditag";
+
+// Create connection
+$conn = new mysqli($servername, $username, $password, $dbname);
+// Check connection
+if ($conn->connect_error) {
+    die("Connection failed: " . $conn->connect_error);
+}
+
+$sql = "SELECT role_name, role_status, entry_by FROM role_master";
+$result = $conn->query($sql);
+if ($result->num_rows > 0) {
+    // Fetch data as an associative array
+    while ($row = $result->fetch_assoc()) {
+        // Access individual columns using keys
+
+        $data['roleName'] = $row['role_name'];
+        $data['roleStatus'] = $row['role_status'];
+        $data['entryBy'] = $row['entry_by'];
+
+        // Process or display the data as needed
+        
+    }
+}
+
+	// print_r();
+// die();
+?>
 	<div class="content-header">
 		<div class="container-fluid">
 			<div class="row">
@@ -132,7 +164,7 @@
 							</div>
 						</td>
 						<td class="text-center"></td>
-						<td class="text-center"></td>
+						<td class="text-center"><?php echo $data['roleName'];?></td>
 						<td class="text-center"></td>
 						<td class="text-center"></td>
 						<td class="text-center"></td>
