@@ -2,7 +2,7 @@
 </div>
   <!-- /.content-wrapper -->
   <footer class="main-footer">
-    <strong>Copyright &copy; 2024
+    <strong>Developer. Dharmik Hirpara
   </footer>
 
   <!-- Control Sidebar -->

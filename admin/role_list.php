@@ -166,7 +166,7 @@
                             <td class="text-center"><?php echo $row['role_status']; ?></td>
                             <td class="text-center"><?php echo date('Y-m-d H:i:s', strtotime($row['entry_date'])); ?></td>
                             <td class="text-center"><?php echo $row['entry_by']; ?></td>
-                            <td class="text-center"><?php echo date('Y-m-d H:i:s', strtotime($row['update_date'])); ?></td>
+							<td class="text-center"><?php echo date('Y-m-d H:i:s', strtotime($row['update_date'])); ?></td>
                             <td class="text-center"><?php echo $row['update_by']; ?></td>
                         </tr>
                     <?php
