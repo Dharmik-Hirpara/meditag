@@ -158,15 +158,15 @@
                                         <i class="fas fa-edit fa-xs"></i>
                                     </button>
                                     <button type="button" class="btn btn-danger btn-sm rounded flex-grow-1">
-                                        <i class="fas fa-trash-alt fa-xs"></i>
+                                        <i cla ss="fas fa-trash-alt fa-xs"></i>
                                     </button>
                                 </div>
                             </td>
                             <td class="text-center"><?php echo $row['role_name']; ?></td>
                             <td class="text-center"><?php echo $row['role_status']; ?></td>
-                            <td class="text-center"><?php echo date('Y-m-d H:i:s', strtotime($row['entry_date'])); ?></td>
+							<td class="text-center"><?php echo DateTime::createFromFormat('Y-m-d H:i:s', $row['entry_date'])->format('Y-m-d H:i:s'); ?></td>
                             <td class="text-center"><?php echo $row['entry_by']; ?></td>
-							<td class="text-center"><?php echo date('Y-m-d H:i:s', strtotime($row['update_date'])); ?></td>
+							<td class="text-center"><?php echo DateTime::createFromFormat('Y-m-d H:i:s', $row['update_date'])->format('Y-m-d H:i:s'); ?></td>
                             <td class="text-center"><?php echo $row['update_by']; ?></td>
                         </tr>
                     <?php

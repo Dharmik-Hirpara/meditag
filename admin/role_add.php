@@ -11,6 +11,11 @@ $DB = $Connection_Lib->Connection();
     $Role_Name = isset($_POST['roleName']) ? $_POST['roleName'] : "";
     $Role_Description = isset($_POST['roleDescription1']) ? $_POST['roleDescription1'] : "";
     $Role_Status = isset($_POST['roleStatus']) ? $_POST['roleStatus'] : "";
+    $is_delete = 1;
+    $entry_by = 1;
+    $entry_date = date('Y-m-d H:i:s');
+    $update_by = 1;
+    $update_date = date('Y-m-d H:i:s');
 
     $errors = [];
 
@@ -28,11 +33,11 @@ $DB = $Connection_Lib->Connection();
         // Server-side validation
         if (empty($errors)) {
             // Insert query using prepared statement
-            $insertQuery = "INSERT INTO role_master (Role_Name, Role_Description, Role_Status) VALUES (?, ?, ?)";
+            $insertQuery = "INSERT INTO role_master (Role_Name, Role_Description, Role_Status, is_delete,entry_by,entry_date) VALUES (?, ?, ?, ?,?,?)";
             $stmt = $DB->prepare($insertQuery);
 
 			if ($stmt) {
-				$stmt->bind_param("sss", $Role_Name, $Role_Description, $Role_Status);
+				$stmt->bind_param("sssiss", $Role_Name, $Role_Description, $Role_Status,$is_delete,$entry_by,$entry_date);
 			
 				if ($stmt->execute()) {
 					// Redirect to the role list page after successful submission
