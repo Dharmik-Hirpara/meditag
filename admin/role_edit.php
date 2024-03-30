@@ -8,15 +8,7 @@ $Connection_Lib = new Connection_Lib();
 $DB = $Connection_Lib->Connection();
 
 
-    $Role_Name = isset($_POST['roleName']) ? $_POST['roleName'] : "";
-    $Role_Description = isset($_POST['roleDescription1']) ? $_POST['roleDescription1'] : "";
-    $Role_Status = isset($_POST['roleStatus']) ? $_POST['roleStatus'] : "";
-    $is_delete = 1;
-    $entry_by = 0;
-    $entry_date = date('Y-m-d H:i:s');
-    $update_by = 1;
-    $update_date = date('Y-m-d H:i:s');
-
+    
     $errors = [];
 
     // Check if the form has been submitted
@@ -64,7 +56,7 @@ $DB = $Connection_Lib->Connection();
 	<div class="container-fluid">
 		<div class="row mb-3 ">
 			<div class="col ">
-				<h1 class="card-title  " style="font-size: 2.3rem;">Role Add</h1>
+				<h1 class="card-title  " style="font-size: 2.3rem;">Role Edit</h1>
 			</div>
 			<div class="col-sm-6">
 				<ol class="breadcrumb float-sm-right"></ol>
@@ -81,7 +73,7 @@ $DB = $Connection_Lib->Connection();
 				<form method="post" id="form_submit">
 					<div class="row mb-3 border-bottom">
 						<div class="col-md-12">
-							<h4 class="card-outline text-grey mb-1 pb-2">Role Add</h4>
+							<h4 class="card-outline text-grey mb-1 pb-2">Role </h4>
 						</div>
 					</div>
 
@@ -113,7 +105,7 @@ $DB = $Connection_Lib->Connection();
 					<div class="row mb-1 border-top mt-4">
 						<div class="col-md-3 mt-3">
 							<button type="button" class="btn btn-secondary mr-3" onclick="window.location.href='role_list.php'">Back</button>
-							<button type="submit" name="role_add_btn" value="submit" class="btn btn-primary"  >Submit</button>
+							<button type="submit" name="role_add_btn" value="submit"     onclick="window.location.href='role_list.php'" class="btn btn-primary"  >Submit</button>
 						</div>
 					</div>
 

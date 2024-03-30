@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -11,6 +10,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <!-- Include header.php -->
     <?php include 'common/header.php'; ?>
+    
     <style>
         /* Additional CSS styles */
         .blue-border {
@@ -19,37 +19,55 @@
         }
     </style>
 </head>
-
 <body>
+    
     <?php
-    date_default_timezone_set('Asia/Kolkata');
+
     $servername = "localhost";
     $username = "root";
     $password = "";
     $dbname = "meditag";
-
     // Create connection
     $conn = new mysqli($servername, $username, $password, $dbname);
-
     // Check connection
     if ($conn->connect_error) {
         die("Connection failed: " . $conn->connect_error);
     }
-
-    $sql = "SELECT role_name, role_status, entry_by, entry_date, update_by, update_date FROM role_master";
+    // Pagination settings
+    $items_per_page = 10; // Number of records to display per page
+    $current_page = isset($_GET['page']) ? (int)$_GET['page'] : 1; // Get the current page from the URL parameter, cast it to an integer
+    $offset = ($current_page - 1) * $items_per_page; // Calculate the offset for the database query
+    // Modify the SQL query to add the LIMIT clause for pagination
+    $sql = "SELECT role_id, role_name, role_status, entry_by, entry_date, update_by, update_date FROM role_master LIMIT $offset, $items_per_page";
     $result = $conn->query($sql);
-
     // Initialize rows array
     $rows = [];
+    
 
-    if ($result->num_rows > 0) {
-        // Fetch data as an associative array
-        while ($row = $result->fetch_assoc()) {
-            $rows[] = $row;
-        }
+if ($result->num_rows > 0) {
+    // Fetch data as an associative array
+    while ($row = $result->fetch_assoc()) {
+        // Convert entry date to Asia/Kolkata timezone and format in 12-hour format
+        $entry_date = new DateTime($row['entry_date']);
+        $entry_date->setTimezone(new DateTimeZone('Asia/Kolkata'));
+        $row['entry_date'] = $entry_date->format('Y-m-d h:i:s A');
+        
+        // Convert update date to Asia/Kolkata timezone and format in 12-hour format
+        $update_date = new DateTime($row['update_date']);
+        $update_date->setTimezone(new DateTimeZone('Asia/Kolkata'));
+        $row['update_date'] = $update_date->format('Y-m-d h:i:s A');
+        
+        $rows[] = $row;
     }
-    ?>
+}
 
+	
+    // Get the total number of records
+    $total_records_query = $conn->query("SELECT COUNT(*) as total FROM role_master");
+    $total_records_data = $total_records_query->fetch_assoc();
+    $total_records = $total_records_data['total'];
+    $total_pages = ceil($total_records / $items_per_page);
+    ?>
     <div class="content-header">
         <div class="container-fluid">
             <div class="row">
@@ -57,16 +75,18 @@
                 <div class="col-md-6">
                     <h1 class="m-0">Role Master</h1>
                 </div>
-                <!-- Role Add Button and Form -->
+                <!-- Role Add Button and Logout -->
                 <div class="col-md-6 text-md-end">
                     <a href="role_add.php" class="btn btn-primary">
                         Role Add
+                    </a>
+                    <a href="http://localhost/meditag/admin/login.php" class="btn btn-danger">
+					<i class="fa fa-sign-out" aria-hidden="true"></i>
                     </a>
                 </div>
             </div>
         </div>
     </div>
-
     <div class="card card-outline card-primary m-3 mb-1 ">
         <div class="card-header">
             <h1 class="card-title">Search Panel</h1>
@@ -74,6 +94,7 @@
                 <button type="button" class="btn btn-tool" data-bs-toggle="collapse" data-bs-target="#searchPanel" onclick="toggleIcon(this)">
                     <i class="fas fa-plus"></i>
                 </button>
+                
                 <script>
                     function toggleIcon(element) {
                         var icon = element.querySelector('i');
@@ -83,7 +104,6 @@
                 </script>
             </div>
         </div>
-
         <div class="collapse" id="searchPanel">
             <div class="card-body">
                 <!-- Add the form tag with an ID -->
@@ -114,7 +134,6 @@
                             </div>
                         </div>
                     </div>
-
                     <div class="row">
                         <div class="col-md-4 mt-1">
                             <!-- Change type to "button" to prevent form submission -->
@@ -130,7 +149,6 @@
             </div>
         </div>
     </div>
-
     <div class="card card-outline card-primary m-3">
         <div class="card-body p-0">
             <table class="table table-bordered m-0">
@@ -145,28 +163,30 @@
                         <th class="text-center">Update By</th>
                     </tr>
                 </thead>
-
                 <tbody>
                     <?php
-                    // Loop through the data array to display each row
+                    // Loop through the paginated rows to display each row
                     foreach ($rows as $row) {
                     ?>
                         <tr>
                             <td class="text-center">
                                 <div class="btn-group" role="group">
-                                    <button type="button" class="btn btn-warning btn-sm rounded flex-grow-1 mr-2">
-                                        <i class="fas fa-edit fa-xs"></i>
-                                    </button>
-                                    <button type="button" class="btn btn-danger btn-sm rounded flex-grow-1">
-                                        <i cla ss="fas fa-trash-alt fa-xs"></i>
+                                    <a href="http://localhost/meditag/admin/role_edit.php?id=<?php echo $row['role_id']; ?>">
+                                        <button type="button" class="btn btn-warning btn-sm rounded flex-grow-1 mr-2" data-bs-toggle="modal" data-bs-target="#editModal" data-role-id="<?php echo $row['role_id']; ?>" data-role-name="<?php echo $row['role_name']; ?>" data-role-status="<?php echo $row['role_status']; ?>">
+                                            <i class="fas fa-edit fa-xs"></i>
+                                        </button>
+                                    </a>
+                                    
+                                    <button type="button" class="btn btn-danger btn-sm rounded flex-grow-1 mr-2">
+                                        <i class="fas fa-trash fa-xs"></i>
                                     </button>
                                 </div>
                             </td>
                             <td class="text-center"><?php echo $row['role_name']; ?></td>
                             <td class="text-center"><?php echo $row['role_status']; ?></td>
-							<td class="text-center"><?php echo DateTime::createFromFormat('Y-m-d H:i:s', $row['entry_date'])->format('Y-m-d H:i:s'); ?></td>
+                            <td class="text-center"><?php echo $row['entry_date']; ?></td>
                             <td class="text-center"><?php echo $row['entry_by']; ?></td>
-							<td class="text-center"><?php echo DateTime::createFromFormat('Y-m-d H:i:s', $row['update_date'])->format('Y-m-d H:i:s'); ?></td>
+                            <td class="text-center"><?php echo $row['update_date']; ?></td>
                             <td class="text-center"><?php echo $row['update_by']; ?></td>
                         </tr>
                     <?php
@@ -178,22 +198,26 @@
         <div class="card-footer clearfix ">
             <!-- Pagination -->
             <ul class="pagination pagination-sm m-0 float-right p-0">
-                <li class="page-item"><a class="page-link" href="#">«</a></li>
-                <li class="page-item"><a class="page-link" href="#">1</a></li>
-                <li class="page-item"><a class="page-link" href="#">2</a></li>
-                <li class="page-item"><a class="page-link" href="#">3</a></li>
-                <li class="page-item"><a class="page-link" href="#">»</a></li>
+                <?php if ($current_page > 1) { ?>
+                    <li class="page-item"><a class="page-link" href="?page=<?php echo $current_page - 1; ?>">«</a></li>
+                <?php } ?>
+
+                <?php for ($i = 1; $i <= $total_pages; $i++) { ?>
+                    <li class="page-item <?php echo ($i == $current_page) ? 'active' : ''; ?>"><a class="page-link" href="?page=<?php echo $i; ?>"><?php echo $i; ?></a></li>
+                <?php } ?>
+
+                <?php if ($current_page < $total_pages) { ?>
+                    <li class="page-item"><a class="page-link" href="?page=<?php echo $current_page + 1; ?>">»</a></li>
+                <?php } ?>
             </ul>
         </div>
     </div>
-
     <!-- Content Section -->
     <section class="content">
         <div class="container-fluid">
             <div class="row"></div>
         </div>
     </section>
-
     <!-- Include Bootstrap JS and footer.php -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
     <?php include 'common/footer.php'; ?>
@@ -205,6 +229,11 @@
             document.getElementById('searchForm').reset();
         }
     </script>
+    <script>
+        function editRole(roleId) {
+            // Redirect to role_edit.php with roleId as query parameter
+            window.location.href = "http://localhost/meditag/admin/role_edit.php?role_id=" + role_id;
+        }
+    </script>
 </body>
-
 </html>
