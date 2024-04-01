@@ -26,7 +26,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $stmt = $conn->prepare($sql);
     $stmt->bind_param("ss", $username, $password);
 
-    // Execute the statement
+    // Execute the statement 
     $stmt->execute();
 
     // Get result
